@@ -1,0 +1,1 @@
+Just a repository to log the algorithms and data structures that interest me.
