@@ -1,6 +1,6 @@
 import java.util.Iterator;
 
-public class Deque<Item> implements Iterable<Item> 
+public class DequeWithLinkedList<Item> implements Iterable<Item> 
 {
     private Node first, last;
     private int n;
@@ -15,7 +15,7 @@ public class Deque<Item> implements Iterable<Item>
         }
     }
 
-    public Deque() 
+    public DequeWithLinkedList() 
     {
         first = new Node(null);
         last = new Node(null);
