@@ -9,7 +9,7 @@ stack<int> processing_order;
 
 void dfsr(int v) {
 	visited[v] = true;
-	for(int i = (int) gr[v].size() - 1; i >= 0; i--) {
+	for(int i = 0; i < (int) gr[v].size(); i++) {
 		if(!visited[gr[v][i]]) 
 			dfsr(gr[v][i]);
 	}
@@ -50,11 +50,6 @@ int main() {
 		cin >> u >> v;
 		g[u].push_back(v);
 		gr[v].push_back(u);
-	}
-
-	for(int i = 1; i <= n; i++) {
-		sort(g[i].begin(), g[i].end());
-		sort(gr[i].begin(), gr[i].end());
 	}
 
 	Kosaraju_Sharir();
