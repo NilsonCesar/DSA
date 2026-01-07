@@ -29,6 +29,12 @@ void heapify_down(vector<int>& heap, int i, int n) {
     }
 }
 
+int take_heap_min(vector<int>& heap, int& n) {
+    swap(heap[1], heap[n]);
+    heapify_down(heap, 1, --n);
+    return heap[n + 1];
+}
+
 int main(void) {
     vector<int> heap(N);
     int n = 1;
@@ -48,9 +54,7 @@ int main(void) {
 
     vector<int> sorted_a(10);
     for (int i = 0; i < 10; i++) {
-        sorted_a[i] = heap[1];
-        swap(heap[1], heap[n]);
-        heapify_down(heap, 1, --n);
+        sorted_a[i] = take_heap_min(heap, n);
     }
 
     cout << "Array sorted by heapsort:" << '\n';
